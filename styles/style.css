@@ -1,0 +1,180 @@
+:root {
+  --font-caps: "Alegreya SC", serif;
+  --font-normal: "STIX Two Text", serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: white;
+  font-family: var(--font-normal);
+  padding-inline: 5vw;
+  height: max-content;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.news-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2vw;
+  border-bottom: 6px solid black;
+  font-family: var(--font-caps);
+}
+.news-header > h1 {
+  font-size: 10vw;
+}
+.metadata-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2vw;
+}
+
+#article-1 {
+  width: 100%;
+  margin-top: 2vw;
+  padding-bottom: 2vw;
+  border-bottom: 2px solid black;
+}
+
+.article-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.article-image {
+  max-width: 100%;
+}
+.article-image-caption {
+  font-size: 1vw;
+  align-self: flex-start;
+}
+
+.article-header {
+  font-size: 5.5vw;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vw;
+}
+.article-body {
+  column-width: 14rem;
+  column-fill: balance;
+}
+
+.article-body p {
+  text-indent: 1rem;
+}
+
+.article-author {
+  margin-bottom: 2vw;
+  display: block;
+}
+.article-author .name {
+  font-weight: bold;
+  display: block;
+}
+.article-author .organisation {
+  font-size: 1vw;
+  font-weight: lighter;
+  display: block;
+}
+
+.article-group {
+  width: 100%;
+  padding-bottom: 1vw;
+  border-bottom: 2px solid black;
+  display: flex;
+}
+
+#article-2 {
+  width: 50rem;
+  margin-top: 2vw;
+  padding-right: 2vw;
+}
+#article-2 .article-header {
+  font-size: 5vw;
+  line-height: 4rem;
+  width: 50rem;
+}
+#article-2 .article-image-container {
+  width: 50rem;
+}
+#article-2 .article-image {
+  max-width: 100%;
+}
+#article-2 .article-image-caption {
+  font-size: 1vw;
+}
+
+#article-2 .article-body {
+  column-width: 14rem;
+  margin-top: 2vw;
+}
+
+#article-3 {
+  width: 20rem;
+  padding-inline: 2vw;
+  margin-top: 2vw;
+  border-left: 2px solid black;
+}
+
+#article-3 .article-header {
+  font-size: 3vw;
+}
+
+footer {
+  display: flex;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+footer section {
+  padding-inline: 2vw;
+  border-inline: 1px solid black;
+}
+
+footer section:first-child {
+  border-left: none;
+}
+footer section:last-child {
+  border-right: none;
+}
+
+footer header {
+  font-weight: bold;
+}
+
+nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  height: 6rem;
+  width: 2rem;
+  border-radius: 20px 0 0 20px;
+  background: wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav button {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.disabled-btn {
+  color: gray;
+  cursor: default;
+}
