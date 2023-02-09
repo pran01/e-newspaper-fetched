@@ -41,6 +41,45 @@ class TopArticle extends HTMLElement {
 `;
     shadowRoot.appendChild(topArticleTemplate.content);
   }
+  static get observedAttributes() {
+    return ["body", "header", "image"];
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    const topArticleTemplate = document.createElement("template");
+    topArticleTemplate.innerHTML = `
+            <header class="article-header">
+                ${this.getAttribute("header")}
+            </header>
+            ${
+              this.hasAttribute("image")
+                ? `<figure class="article-image-container">
+                  <img src=${this.getAttribute(
+                    "image"
+                  )} alt=${this.getAttribute(
+                    "image-caption"
+                  )} class="article-image">
+                  <figcaption class="article-image-caption">
+                      <strong>
+                          ${this.getAttribute("image-caption")}
+                      </strong>
+                  </figcaption>
+              </figure>`
+                : ""
+            }
+            <section class="article-body">
+                <div class="article-author">
+                    <div class="name">${this.getAttribute("author-name")}
+                    </div>
+                    <div class="organisation">
+                        ${this.getAttribute("author-organisation")}
+                    </div>
+                </div>
+                ${this.getAttribute("body")}
+            </section>
+`;
+    this.shadowRoot.querySelector("#article-1").innerHTML =
+      topArticleTemplate.innerHTML;
+  }
 }
 
 class WideArticle extends HTMLElement {
@@ -84,6 +123,40 @@ class WideArticle extends HTMLElement {
         `;
     shadowRoot.appendChild(wideArticleTemplate.content);
   }
+  static get observedAttributes() {
+    return ["body", "header", "image"];
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    const topArticleTemplate = document.createElement("template");
+    topArticleTemplate.innerHTML = `
+            <header class="article-header">
+                ${this.getAttribute("header")}
+            </header>
+            ${
+              this.hasAttribute("image")
+                ? `<figure class="article-image-container">
+                  <img src=${this.getAttribute(
+                    "image"
+                  )} alt=${this.getAttribute(
+                    "image-caption"
+                  )} class="article-image">
+              </figure>`
+                : ""
+            }
+            <section class="article-body">
+                <div class="article-author">
+                    <div class="name">${this.getAttribute("author-name")}
+                    </div>
+                    <div class="organisation">
+                        ${this.getAttribute("author-organisation")}
+                    </div>
+                </div>
+                ${this.getAttribute("body")}
+            </section>
+`;
+    this.shadowRoot.querySelector("#article-2").innerHTML =
+      topArticleTemplate.innerHTML;
+  }
 }
 
 class SideArticle extends HTMLElement {
@@ -107,11 +180,6 @@ class SideArticle extends HTMLElement {
                         )} alt=${this.getAttribute(
                         "image-caption"
                       )} class="article-image">
-                        <figcaption class="article-image-caption">
-                            <strong>
-                                ${this.getAttribute("image-caption")}
-                            </strong>
-                        </figcaption>
                     </figure>`
                     : ""
                 }
@@ -129,6 +197,40 @@ class SideArticle extends HTMLElement {
             </article>
         `;
     shadowRoot.appendChild(sideArticleTemplate.content);
+  }
+  static get observedAttributes() {
+    return ["body", "header", "image"];
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    const topArticleTemplate = document.createElement("template");
+    topArticleTemplate.innerHTML = `
+            <header class="article-header">
+                ${this.getAttribute("header")}
+            </header>
+            ${
+              this.hasAttribute("image")
+                ? `<figure class="article-image-container">
+                  <img src=${this.getAttribute(
+                    "image"
+                  )} alt=${this.getAttribute(
+                    "image-caption"
+                  )} class="article-image">
+              </figure>`
+                : ""
+            }
+            <section class="article-body">
+                <div class="article-author">
+                    <div class="name">${this.getAttribute("author-name")}
+                    </div>
+                    <div class="organisation">
+                        ${this.getAttribute("author-organisation")}
+                    </div>
+                </div>
+                ${this.getAttribute("body")}
+            </section>
+`;
+    this.shadowRoot.querySelector("#article-3").innerHTML =
+      topArticleTemplate.innerHTML;
   }
 }
 

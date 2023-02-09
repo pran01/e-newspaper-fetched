@@ -17,9 +17,13 @@
 
         <script src="https://kit.fontawesome.com/bf18287d69.js" crossorigin="anonymous"></script>
         <script src="./scripts/script.js"></script>
+        <script src="./scripts/fetchNews.js"></script>
     </head>
 
     <body>
+        <section class="loader-container">
+            <img src="./assets/images/news-loading-unscreen.gif" alt="loading">
+        </section>
         <header class="news-header">
             <section class="metadata-header">
                 <span>Saturday, January 8, 2022 | JDNEWS.COM</span>
@@ -27,7 +31,7 @@
             </section>
         </header>
         <section class="article-group">
-            <wide-article header="Tobacco, vape stores
+            <wide-article id="wide" header="Tobacco, vape stores
             see rise in popularity" body="
             <p>
                 With the rise in popularity of vaping
@@ -221,9 +225,9 @@
                 cases, as they have been more receptive
                 to state-level vaccine requirements
                 than the other three conservative justices. Barrett and Kavanaugh also had something to do with it.
-        " author-name="Mark Sherman and Jessica Gresko" author-organisation="ASSOCIATED"></top-article>
+        " body-changed="" author-name="Mark Sherman and Jessica Gresko" author-organisation="ASSOCIATED"></top-article>
         <footer-element></footer-element>
-        <nav-element next-page="page3.html" prev-page="index.html"></nav-element>
+        <nav-element disabled-right prev-page="page2.html"></nav-element>
     </body>
 
 </html>
