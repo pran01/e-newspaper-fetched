@@ -5,7 +5,12 @@ const api_key = "pub_1682587aaae7d871ca330b3f32ff492ae3b6b";
 //top= more than 800 characters image doesnt matter
 
 function fetchNews() {
-  fetch(`https://newsdata.io/api/1/news?apikey=${api_key}&language=en`)
+  let headers = new Headers();
+  headers.append("Access-Control-Allow-Origin", "http://localhost:3000");
+  headers.append("Access-Control-Allow-Credentials", "true");
+  fetch(`https://newsdata.io/api/1/news?apikey=${api_key}&language=en`, {
+    headers: headers,
+  })
     .then((res) => res.json())
     .then((data) => data.results)
     .then((results) => {
@@ -32,7 +37,7 @@ function fetchNews() {
         if (
           !result.image_url &&
           result.content.length > 1300 &&
-          result.content.length < 2500 &&
+          result.content.length < 2000 &&
           !sideFound
         ) {
           console.log("side found");
